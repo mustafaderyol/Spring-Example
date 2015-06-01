@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>JSF-Spring-Hibernate</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Yazar :" />
+                <h:inputText value="#{yaziConstruct.yazi.yazar}" />
+                <h:outputLabel value="Tarih :" />
+                <h:inputText value="#{yaziConstruct.yazi.tarih}" />
+                <h:outputLabel value="Yazı :" />
+                <h:inputText value="#{yaziConstruct.yazi.yazi}" />
+            </h:panelGrid>
+            <h:commandButton value="Yazı Ekle" action="#{yaziConstruct.yaziEkle}" />
+        </h:form>
+        <br></br>
+        <br>Yazı Listesi</br>
+        <br></br>
+        <h:dataTable value="#{yaziConstruct.yaziListesi}" var="liste" border="1" >
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Yazı No" />
+                </f:facet>
+                <h:outputText value="#{liste.yaziNo}"
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Yazar" />
+                </f:facet>
+                <h:outputText value="#{liste.yazar}"
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Tarih" />
+                </f:facet>
+                <h:outputText value="#{liste.tarih}"
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Yazı" />
+                </f:facet>
+                <h:outputText value="#{liste.yazi}"
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+
